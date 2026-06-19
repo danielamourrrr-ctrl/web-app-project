@@ -1,0 +1,37 @@
+/* Custom Unified Design Settings */
+:root {
+    --primary-color: #1e3a8a;   /* Professional Deep Blue */
+    --secondary-color: #0d9488; /* Fresh Teal Accent */
+    --dark-color: #1f2937;      /* Clean Dark Grey */
+    --light-color: #f9fafb;     /* Soft Light Background */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: #ffffff;
+}
