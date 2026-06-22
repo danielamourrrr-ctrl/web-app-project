@@ -50,4 +50,17 @@ footer {
     background-color: var(--primary-color);
     color: #ffffff;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+/* Milestone 2 Layout Polish Extensions */
+html {
+    scroll-behavior: smooth;
+}   
+/* Global link transitions for interactive navigation metrics */
+a, .btn, .custom-card {
+    transition: all 0.3s ease-in-out !important;     
+}
+
+/* Focused active nav link underline effect */
+.nav-link.active {
+    border-bottom: 2px solid var(--secondary-color);
 }
