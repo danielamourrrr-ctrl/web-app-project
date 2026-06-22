@@ -1,15 +1,16 @@
 /* Custom Unified Design Settings */
 :root {
-    --primary-color: #1e3a8a;   /* Professional Deep Blue */
+    --primary-color: #0f172a;   /* Premium Deep Slate Blue */
     --secondary-color: #0d9488; /* Fresh Teal Accent */
-    --dark-color: #1f2937;      /* Clean Dark Grey */
-    --light-color: #f9fafb;     /* Soft Light Background */
+    --dark-color: #1e293b;      /* Dark Card Backgrounds */
+    --light-color: #0b0f19;     /* Deep Midnight/Dark Main Background */
+    --text-muted: #94a3b8;      /* Soft Gray Text */
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--light-color);
-    color: var(--dark-color);
+    color: #f8fafc;             /* Crisp White Text for readability */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -21,6 +22,7 @@ main {
 
 .navbar {
     background-color: var(--primary-color) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-brand, .nav-link {
@@ -31,7 +33,21 @@ main {
     color: var(--secondary-color) !important;
 }
 
+/* Custom Contrast Cards for Small Business sections */
+.custom-card {
+    background-color: var(--dark-color) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #f8fafc !important;
+    transition: transform 0.2s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color) !important;
+}
+
 footer {
-    background-color: var(--dark-color);
+    background-color: var(--primary-color);
     color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
