@@ -99,3 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 .text-contrast-fix {
     color: #cbd5e1 !important; /* Premium light slate gray */
 }
+/* Global Paragraph and Muted Text Contrast Fix */
+p, span, label, .text-muted {
+    color: #e2e8f0 !important; /* Forces a crisp, clean light silver text */
+}

@@ -62,4 +62,54 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+    // ==========================================
+    // FEATURE 3: Dynamic Footer Auto-Copyright Year
+    // ==========================================
+    const copyrightElement = document.querySelector("footer p");
+    if (copyrightElement) {
+        const currentYear = new Date().getFullYear();
+        copyrightElement.innerHTML = `&copy; ${currentYear} Apex Digital Solutions. All Rights Reserved.`;
+    }
+    // ==========================================
+    // FEATURE 4: Dynamic Injectable Scroll to Top
+    // ==========================================
+    const scrollTopBtn = document.createElement("button");
+    scrollTopBtn.innerHTML = "&uarr;";
+    scrollTopBtn.id = "scrollTopBtn";
+    
+    // Applying structural styling properties directly via JavaScript
+    scrollTopBtn.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        display: none;
+        background-color: #0d9488;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 9999;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    `;
+    
+    document.body.appendChild(scrollTopBtn);
+
+    // Toggle button visibility based on vertical scroll position
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+            scrollTopBtn.style.display = "block";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+    });
+
+    // Smooth scroll execution on interaction
+    scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    
 });
