@@ -37,4 +37,29 @@ document.addEventListener("DOMContentLoaded", () => {
             contactForm.reset();
         });
     }
+    // ==========================================
+    // Milestone 3: Live FAQ Real-Time Search Filter
+    // ==========================================
+    const faqSearch = document.getElementById("faqSearch");
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    if (faqSearch && faqItems.length > 0) {
+        faqSearch.addEventListener("input", (event) => {
+            const searchQuery = event.target.value.toLowerCase().trim();
+
+            faqItems.forEach((item) => {
+                // Fetch text layers inside the card container
+                const questionText = item.querySelector("h5").textContent.toLowerCase();
+                const answerText = item.querySelector("p").textContent.toLowerCase();
+
+                // Check if the query matches either the question or answer text
+                if (questionText.includes(searchQuery) || answerText.includes(searchQuery)) {
+                    item.style.display = "block"; // Show matching item
+                    item.style.opacity = "1";
+                } else {
+                    item.style.display = "none";  // Hide non-matching item
+                }
+            });
+        });
+    }
 });
