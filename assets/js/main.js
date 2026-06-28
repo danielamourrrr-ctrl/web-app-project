@@ -113,37 +113,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-/**
- * Dynamic Content Contrast Fixer - Revision 2
- * Programmatically identifies light-colored layout containers by text matching,
- * forces text child-nodes to solid black, and explicitly protects dark theme sections.
- */
-document.addEventListener("DOMContentLoaded", function() {
-    // Array of specific phrases that need black text parameters
-    const targetPhrases = [
-        "Why partner with us", 
-        "Reliability", 
-        "Expert Design", 
-        "Our Leadership", 
-        "Core Objective", 
-        "Request a Consultation"
-    ];
-
-    // Scan all section, div, and article elements across the active DOM
-    document.querySelectorAll("section, div, .card, form").forEach(container => {
-        // EXPLICIT GUARD: If this container belongs to "Our Story", skip it completely
-        if (container.textContent && container.textContent.includes("Our Story")) {
-            return; 
-        }
-
-        targetPhrases.forEach(phrase => {
-            if (container.textContent && container.textContent.includes(phrase)) {
-                // Force all nested text nodes inside this container to black
-                container.style.setProperty("color", "#000000", "important");
-                container.querySelectorAll("h1, h2, h3, h4, h5, h6, p, span, label, small").forEach(el => {
-                    el.style.setProperty("color", "#000000", "important");
-                });
-            }
-        });
-    });
-});
