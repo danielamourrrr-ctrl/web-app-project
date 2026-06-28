@@ -91,3 +91,7 @@ a, .btn, .custom-card {
 ::-webkit-scrollbar-thumb:hover {
     background: #0f172a; 
 }
+/* Global Heading High-Contrast Fix */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+}
