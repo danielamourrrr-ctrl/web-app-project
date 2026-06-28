@@ -115,3 +115,7 @@ a, .nav-link, .btn {
 a:hover, .nav-link:hover {
     color: var(--secondary-color) !important;
 }
+/* Specific Section Readability Overrides */
+.text-secondary, .text-black-50, .muted-text-fix {
+    color: #cbd5e1 !important; /* Premium light slate gray for high legibility */
+}
