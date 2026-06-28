@@ -113,3 +113,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+/**
+ * Global Contrast Enforcement Engine
+ */
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Fix Home and Contact pages
+    const darkTextPhrases = ["Why partner with us", "Reliability", "Expert Design", "Request a Consultation", "Core Objective"];
+    document.querySelectorAll("section, div, .card, form").forEach(container => {
+        if (container.textContent && !container.textContent.includes("Our Story")) {
+            darkTextPhrases.forEach(phrase => {
+                if (container.textContent.includes(phrase)) {
+                    container.style.setProperty("color", "#000000", "important");
+                    container.querySelectorAll("h1, h2, h3, h4, h5, h6, p, span, label, small").forEach(el => {
+                        el.style.setProperty("color", "#000000", "important");
+                    });
+                }
+            });
+        }
+    });
+
+    // 2. Fix About page Leader Cards: Keep headers white, force ALL card content to black
+    document.querySelectorAll(".card.bg-white").forEach(card => {
+        card.style.setProperty("color", "#000000", "important");
+        // Force every single text element inside the white card to black
+        card.querySelectorAll("h5, p, span, small, card-text").forEach(textNode => {
+            textNode.style.setProperty("color", "#000000", "important");
+        });
+    });
+});
