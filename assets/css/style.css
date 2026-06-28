@@ -119,3 +119,11 @@ a:hover, .nav-link:hover {
 .text-secondary, .text-black-50, .muted-text-fix {
     color: #cbd5e1 !important; /* Premium light slate gray for high legibility */
 }
+/* Direct override for Bootstrap's built-in muted and secondary text classes */
+.text-muted, 
+.text-secondary, 
+.text-black-50, 
+[class*="text-muted"], 
+[class*="text-secondary"] {
+    color: #cbd5e1 !important; /* Forces a crisp, highly legible light slate gray */
+} 
