@@ -114,7 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 /**
- * Global Contrast Enforcement Engine
+/**
+ * Global Contrast Enforcement Engine - Final Revision
  */
 document.addEventListener("DOMContentLoaded", function() {
     // 1. Fix Home and Contact pages
@@ -132,12 +133,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // 2. Fix About page Leader Cards: Keep headers white, force ALL card content to black
+    // 2. Fix About page Leader Cards: Force ALL card content to black
     document.querySelectorAll(".card.bg-white").forEach(card => {
         card.style.setProperty("color", "#000000", "important");
-        // Force every single text element inside the white card to black
         card.querySelectorAll("h5, p, span, small, card-text").forEach(textNode => {
             textNode.style.setProperty("color", "#000000", "important");
         });
+    });
+
+    // 3. EXPLICIT PROTECTION: Force Contact Page Header Intro text back to White
+    document.querySelectorAll("h1, h2, h3, p, span").forEach(el => {
+        if (el.textContent && (el.textContent.includes("Get In Touch") || el.textContent.includes("Have a project in mind"))) {
+            el.style.setProperty("color", "#ffffff", "important");
+        }
     });
 });
