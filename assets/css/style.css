@@ -103,3 +103,15 @@ h1, h2, h3, h4, h5, h6 {
 p, span, label, .text-muted {
     color: #e2e8f0 !important; /* Forces a crisp, clean light silver text */
 }
+/* Nuclear Readability Override for Dark Theme */
+body, main, section, div, p, span, h1, h2, h3, h4, h5, h6, label {
+    color: #f8fafc !important; /* Forces all standard text and headers to a crisp, high-contrast light silver */
+}
+
+/* Maintain proper contrast for interactive links and brand accents */
+a, .nav-link, .btn {
+    color: #ffffff;
+}
+a:hover, .nav-link:hover {
+    color: var(--secondary-color) !important;
+}
